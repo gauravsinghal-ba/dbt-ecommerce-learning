@@ -3,6 +3,8 @@ name: dbt CI
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 1 * * *'    # runs every day at 1am UTC (6:30am IST)
 
 jobs:
   dbt:
