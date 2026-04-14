@@ -1,3 +1,8 @@
+{{ config(
+    materialized='table',
+    tags=['daily']
+) }}
+
 with customers as (
     select * from {{ ref('stg_customers') }}
 ),
