@@ -18,6 +18,11 @@ select
     o.status,
     o.ordered_at,
     ot.order_total,
-    ot.item_count
+    ot.item_count,
+    case
+    when ot.order_total > 3000 then 'high'
+    when ot.order_total > 1000 then 'medium'
+    else 'low'
+end as revenue_category
 from orders o
 left join order_totals ot using (order_id)
