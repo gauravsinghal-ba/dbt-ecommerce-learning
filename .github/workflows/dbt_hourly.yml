@@ -1,6 +1,7 @@
 name: dbt Hourly Run
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 * * * *'    # runs every hour
 
