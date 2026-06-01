@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dbt
-        run: pip install dbt-postgres
+        run: pip install "dbt-core==1.9.5" "dbt-postgres==1.9.5"
 
       - name: Create profiles.yml
         run: |
