@@ -16,14 +16,12 @@ models:
         tests:
           - not_null
           - relationships:
-              arguments:
-                to: ref('stg_customers')
-                field: customer_id
+              to: ref('stg_customers')
+              field: customer_id
       - name: status
         tests:
           - accepted_values:
-              arguments:
-                values: ['placed', 'shipped', 'delivered', 'returned']
+              values: ['placed', 'shipped', 'delivered', 'returned']
 
   - name: stg_order_items
     columns:
@@ -33,6 +31,5 @@ models:
         tests:
           - not_null
           - relationships:
-              arguments:
-                to: ref('stg_orders')
-                field: order_id
+              to: ref('stg_orders')
+              field: order_id
